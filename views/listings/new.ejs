@@ -1,0 +1,108 @@
+<% layout("/layouts/boilerplate") %>
+
+<div class="row mt-4 mb-5">
+  <div class="col-12 col-md-8 offset-md-2">
+    <div class="card form-glass-card shadow-sm border-0">
+      
+      <div class="card-header bg-transparent border-bottom-0 pt-4 pb-0">
+        <h3 class="card-title text-center mb-0 fw-bold">Create New Listing</h3>
+      </div>
+
+      <div class="card-body p-4">
+        <form method="POST" action="/listings" novalidate class="needs-validation" 
+         enctype="multipart/form-data">
+          
+          <div class="mb-3">
+            <label for="title" class="form-label fw-semibold">Title</label>
+            <input 
+              id="title"
+              name="listing[title]" 
+              placeholder="Enter a catchy title" 
+              type="text"
+              class="form-control custom-input"
+              required
+            />
+            <div class="valid-feedback">Looks good!</div>
+            <div class="invalid-feedback">Please enter a title.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="description" class="form-label fw-semibold">Description</label>
+            <textarea 
+              id="description"
+              name="listing[description]"
+              placeholder="Enter description" 
+              class="form-control custom-input" 
+              rows="4"
+              required
+            ></textarea>
+            <div class="invalid-feedback">Please enter a short description.</div>
+          </div>
+
+          <div class="mb-3">
+            <label for="image" class="form-label fw-semibold">Upload Listing Image</label>
+            <input 
+              id="image"
+              name="listing[image]"  
+              type="file"
+              class="form-control custom-input"
+            />
+            <div class="invalid-feedback">Please upload an image.</div>
+            
+          </div>
+
+          <div class="row">
+            <div class="mb-3 col-md-4">
+              <label for="price" class="form-label fw-semibold">Price (₹)</label>
+              <input 
+                id="price"
+                name="listing[price]" 
+                placeholder="1200"
+                type="number"
+                class="form-control custom-input"
+                required
+              />
+              <div class="invalid-feedback">Please enter a valid price.</div>
+            </div>
+
+            <div class="mb-3 col-md-8">
+              <label for="country" class="form-label fw-semibold">Country</label>
+              <input 
+                id="country"
+                name="listing[country]"
+                placeholder="India" 
+                type="text" 
+                class="form-control custom-input"
+                required
+              /> 
+              <div class="invalid-feedback">Please enter country name.</div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="location" class="form-label fw-semibold">Location</label>
+            <input 
+              id="location"
+              name="listing[location]" 
+              placeholder="Lucknow" 
+              type="text"
+              class="form-control custom-input"
+              required
+            />
+            <div class="invalid-feedback">Please enter location.</div>
+          </div>
+
+          <div class="row mt-4">
+            <div class="col-12 col-md-4 mx-auto">
+              <div class="d-grid">
+                <button type="submit" class="btn theme-btn fw-bold">Add Listing</button>
+              </div>
+            </div>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
